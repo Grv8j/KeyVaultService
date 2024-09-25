@@ -14,7 +14,7 @@ public static class RegisterPersistenceExtension
     /// <param name="services"><see cref="IServiceCollection"/></param>
     /// <param name="connectionString">Database connection string</param>
     /// <returns><see cref="IServiceCollection"/></returns>
-    public static IServiceCollection RegisterPersistenceLayer(this IServiceCollection services, string? connectionString)
+    public static IServiceCollection RegisterPersistenceLayer(this IServiceCollection services, string connectionString)
     {
         if (string.IsNullOrWhiteSpace(connectionString))
         {

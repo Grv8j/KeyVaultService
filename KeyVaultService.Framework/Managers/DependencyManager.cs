@@ -26,7 +26,7 @@ public static class DependencyManager
 
                 if (attribute?.ServiceInterfaceType.IsAssignableFrom(type) ?? false)
                 {
-                    services.RegisterServiceByLifetime(attribute.ServiceLifetime, attribute.ServiceInterfaceType, type);
+                    services.RegisterServiceByLifetime(attribute.ServiceLifetime, type, attribute.ServiceInterfaceType);
                 }
             }
         }
