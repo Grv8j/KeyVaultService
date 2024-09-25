@@ -1,0 +1,18 @@
+<Project>
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Update="Swashbuckle.AspNetCore" Version="6.8.0" />
+        <PackageReference Update="Swashbuckle.AspNetCore.*" Version="6.8.0" />
+        <PackageReference Update="Serilog" Version="4.0.1" />
+        <PackageReference Update="Serilog.Enrichers.Environment" Version="3.0.1"/>
+        <PackageReference Update="Serilog.Enrichers.Demystifier" Version="1.0.2"/>
+        <PackageReference Update="Serilog.Sinks.Console" Version="6.0.0" />
+        <PackageReference Update="Serilog.AspNetCore" Version="8.0.2" />
+        <PackageReference Update="Asp.Versioning.Mvc" Version="8.1.0" />
+        <PackageReference Update="Microsoft.Extensions" Version="8.*" />
+        <PackageReference Update="Microsoft.Extensions.*" Version="8.*" />
+    </ItemGroup>
+</Project>
