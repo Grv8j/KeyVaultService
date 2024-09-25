@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\KeyVaultService.Interface\KeyVaultService.Interface.csproj" />
+      <ProjectReference Include="..\KeyVaultService.Persistence\KeyVaultService.Persistence.csproj" />
+    </ItemGroup>
+
 </Project>

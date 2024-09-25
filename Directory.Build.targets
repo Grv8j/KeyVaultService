@@ -14,5 +14,7 @@
         <PackageReference Update="Asp.Versioning.Mvc" Version="8.1.0" />
         <PackageReference Update="Microsoft.Extensions" Version="8.*" />
         <PackageReference Update="Microsoft.Extensions.*" Version="8.*" />
+        <PackageReference Update="Microsoft.EntityFrameworkCore" Version="8.*" />
+        <PackageReference Update="Microsoft.EntityFrameworkCore.*" Version="8.*" />
     </ItemGroup>
 </Project>

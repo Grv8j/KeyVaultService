@@ -2,6 +2,7 @@ using System.Reflection;
 using Asp.Versioning;
 using KeyVaultService;
 using KeyVaultService.Framework.Managers;
+using KeyVaultService.Persistence;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,12 +24,12 @@ builder.Services.AddSwaggerGen(opt =>
     opt.UseOneOfForPolymorphism();
     opt.UseAllOfToExtendReferenceSchemas();
     
-    opt.SwaggerDoc(Constants.API_VERSION,
+    opt.SwaggerDoc(Constants.Api.API_VERSION,
         new OpenApiInfo
         {
-            Title = Constants.API_TITLE,
-            Version = Constants.API_VERSION,
-            Description = Constants.API_DESCRIPTION
+            Title = Constants.Api.API_TITLE,
+            Version = Constants.Api.API_VERSION,
+            Description = Constants.Api.API_DESCRIPTION
         });
     
     opt.IncludeXmlComments(
@@ -37,7 +38,10 @@ builder.Services.AddSwaggerGen(opt =>
 });
 
 builder.Services.RegisterServicesFromFullScope();
-
+builder.Services.RegisterPersistenceLayer(
+    builder.Configuration
+        .GetConnectionString(Constants.Configuration.CONNECTION_STRING_KEY_NAME));
+    
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,7 +50,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(opt =>
     {
-        opt.SwaggerEndpoint(Constants.SWAGGER_URL, Constants.API_VERSION);
+        opt.SwaggerEndpoint(Constants.Api.SWAGGER_URL, Constants.Api.API_VERSION);
     });
 }
 

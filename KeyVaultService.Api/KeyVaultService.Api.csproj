@@ -14,6 +14,9 @@
 
     <ItemGroup>
       <ProjectReference Include="..\KeyVaultService.Framework\KeyVaultService.Framework.csproj" />
+      <ProjectReference Include="..\KeyVaultService.Interface\KeyVaultService.Interface.csproj" />
+      <ProjectReference Include="..\KeyVaultService.Logic\KeyVaultService.Logic.csproj" />
+      <ProjectReference Include="..\KeyVaultService.Persistence\KeyVaultService.Persistence.csproj" />
     </ItemGroup>
 
 </Project>
