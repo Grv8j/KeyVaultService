@@ -11,4 +11,12 @@
       <ProjectReference Include="..\KeyVaultService.Persistence\KeyVaultService.Persistence.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+        <PackageReference Include="TinyMapper" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Mapping\" />
+    </ItemGroup>
+
 </Project>

@@ -4,6 +4,7 @@ using KeyVaultService;
 using KeyVaultService.Framework.Managers;
 using KeyVaultService.Persistence;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +42,9 @@ builder.Services.RegisterServicesFromFullScope();
 builder.Services.RegisterPersistenceLayer(
     builder.Configuration
         .GetConnectionString(Constants.Configuration.CONNECTION_STRING_KEY_NAME));
+
+builder.Host.UseSerilog((host, conf) =>
+    conf.ReadFrom.Configuration(host.Configuration));
     
 var app = builder.Build();
 

@@ -10,6 +10,7 @@
     <ItemGroup>
         <PackageReference Include="Swashbuckle.AspNetCore" />
         <PackageReference Include="Asp.Versioning.Mvc" />
+        <PackageReference Include="Serilog.AspNetCore" />
     </ItemGroup>
 
     <ItemGroup>

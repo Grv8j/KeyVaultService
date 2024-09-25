@@ -1,3 +1,4 @@
+using KeyVaultService.Framework.Result;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KeyVaultService.Controllers;
@@ -6,4 +7,18 @@ namespace KeyVaultService.Controllers;
 /// API Controller for Vault
 /// </summary>
 [ApiController]
-public sealed class VaultController : ControllerBase;
+public sealed class VaultController : ControllerBase
+{
+    /// <summary>
+    /// Checks vault name availability
+    /// </summary>
+    /// <returns>True if available, otherwise false</returns>
+    [HttpGet("CheckNameAvailability")]
+    [ProducesResponseType(typeof(IServiceResultWrapper<bool>), StatusCodes.Status200OK)]
+    public IActionResult CheckNameAvailability()
+    {
+        return null;
+    }
+    
+    //TODO - GET, Create, List, Purge,...
+}

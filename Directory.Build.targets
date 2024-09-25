@@ -16,5 +16,6 @@
         <PackageReference Update="Microsoft.Extensions.*" Version="8.*" />
         <PackageReference Update="Microsoft.EntityFrameworkCore" Version="8.*" />
         <PackageReference Update="Microsoft.EntityFrameworkCore.*" Version="8.*" />
+        <PackageReference Update="TinyMapper" Version="3.0.3" />
     </ItemGroup>
 </Project>
