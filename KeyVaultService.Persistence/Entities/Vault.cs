@@ -1,9 +1,11 @@
-﻿namespace KeyVaultService.Persistence.Entities;
+﻿using KeyVaultService.Persistence.Entities.Interfaces;
+
+namespace KeyVaultService.Persistence.Entities;
 
 /// <summary>
 /// Vault entity
 /// </summary>
-public class Vault
+public class Vault : IEntity
 {
     /// <summary>
     /// Id

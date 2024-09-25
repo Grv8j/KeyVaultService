@@ -1,6 +1,7 @@
 using System.Reflection;
 using KeyVaultService.Framework.Dependency;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyModel;
 
 namespace KeyVaultService.Framework.Managers;
 
@@ -16,24 +17,46 @@ public static class DependencyManager
     /// <returns><see cref="IServiceCollection"/></returns>
     public static IServiceCollection RegisterServicesFromFullScope(this IServiceCollection services)
     {
-        foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+        var assemblyDict = new Dictionary<string, Assembly>();
+        foreach (var assemblyName in DependencyContext.Default?.GetDefaultAssemblyNames() ?? [])
         {
-            foreach (var type in assembly.GetTypes()
-                         .Where(x => 
-                             x.CustomAttributes.Any(attribute => attribute.AttributeType == typeof(RegisterServiceAttribute))))
-            {
-                var attribute = type.GetCustomAttribute<RegisterServiceAttribute>();
-
-                if (attribute?.ServiceInterfaceType.IsAssignableFrom(type) ?? false)
-                {
-                    services.RegisterServiceByLifetime(attribute.ServiceLifetime, type, attribute.ServiceInterfaceType);
-                }
-            }
+            RegisterService(Assembly.Load(assemblyName), services, assemblyDict);
         }
 
         return services;
     }
 
+    /// <summary>
+    /// Register services from specified assembly
+    /// </summary>
+    /// <param name="assembly">Loaded assembly</param>
+    /// <param name="services">Collection of services</param>
+    /// <param name="assemblyDict">Already loaded assemblies dictionary</param>
+    /// <returns><inheritdoc cref="IServiceCollection"/></returns>
+    private static IServiceCollection RegisterService(Assembly assembly, IServiceCollection services, IDictionary<string, Assembly> assemblyDict)
+    {
+        if (assembly.FullName == null || assemblyDict.ContainsKey(assembly.FullName))
+        {
+            return services;
+        }
+        
+        foreach (var type in assembly.GetTypes()
+                     .Where(x => 
+                         x.GetCustomAttributes(typeof(RegisterServiceAttribute)).Any()))
+        {
+            var attribute = type.GetCustomAttribute<RegisterServiceAttribute>();
+
+            if (attribute != null && (attribute.ServiceInterfaceType.IsAssignableFrom(type) || type.IsGenericTypeDefinition))
+            {
+                services.RegisterServiceByLifetime(attribute.ServiceLifetime, type, attribute.ServiceInterfaceType);
+            }
+        }
+        
+        assemblyDict.Add(assembly.FullName, assembly);
+
+        return services;
+    }
+    
     /// <summary>
     /// Registers services into <see cref="IServiceCollection"/> by its lifetime
     /// </summary>

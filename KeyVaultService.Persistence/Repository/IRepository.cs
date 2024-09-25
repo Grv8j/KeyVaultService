@@ -1,13 +1,14 @@
 using System.Linq.Expressions;
+using KeyVaultService.Persistence.Entities.Interfaces;
 
-namespace KeyVaultService.Persistence;
+namespace KeyVaultService.Persistence.Repository;
 
 /// <summary>
 /// Repository interface
 /// </summary>
 /// <typeparam name="T">Type of entity</typeparam>
 public interface IRepository<T> : IDisposable
-    where T : class
+    where T : class, IEntity
 {
     /// <summary>
     /// Gets queryable of the entity
@@ -44,10 +45,4 @@ public interface IRepository<T> : IDisposable
     /// </summary>
     /// <param name="predicate">Get predicate</param>
     IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
-
-    /// <summary>
-    /// Saves changes to database
-    /// </summary>
-    /// <returns>Number of affected entities</returns>
-    int Save();
 }

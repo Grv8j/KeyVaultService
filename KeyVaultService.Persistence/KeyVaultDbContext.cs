@@ -6,7 +6,7 @@ namespace KeyVaultService.Persistence;
 /// <summary>
 /// Key vault db context
 /// </summary>
-internal class KeyVaultDbContext : DbContext
+public class KeyVaultDbContext : DbContext
 {
     /// <summary>
     /// C-tor
