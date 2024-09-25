@@ -6,8 +6,7 @@ namespace KeyVaultService.Controllers;
 /// <summary>
 /// API Controller for Vault
 /// </summary>
-[ApiController]
-public sealed class VaultController : ControllerBase
+public sealed class VaultController : BaseController
 {
     /// <summary>
     /// Checks vault name availability
