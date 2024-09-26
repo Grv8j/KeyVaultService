@@ -28,7 +28,7 @@ public class KeyVaultDbContext : DbContext
     public DbSet<Secret> Secrets { get; set; }
 
     /// <summary>
-    /// Sercret value db set
+    /// Secret value db set
     /// </summary>
     public DbSet<SecretValue> SecretValues { get; set; }
 

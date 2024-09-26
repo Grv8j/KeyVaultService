@@ -32,7 +32,9 @@ internal class UnitOfWork : IUnitOfWork
     public IRepository<TEntity> GetRepository<TEntity>()
         where TEntity : class, IEntity
     {
-        return serviceProvider.GetService<IRepository<TEntity>>()
-               ?? throw new InvalidOperationException($"Repository is not registered for type {typeof(IRepository<TEntity>).FullName}");
+        // return serviceProvider.GetService<IRepository<TEntity>>()
+        //        ?? throw new InvalidOperationException($"Repository is not registered for type {typeof(IRepository<TEntity>).FullName}");
+
+        return new Repository<TEntity>(dbContext);
     }
 }
