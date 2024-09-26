@@ -1,0 +1,1075 @@
+{
+	"tables": {
+		"08356400-1100-44f3-ab54-de80dcedd5c9": {
+			"id": "08356400-1100-44f3-ab54-de80dcedd5c9",
+			"visible": true,
+			"name": "Vault",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "477d59aa-a06f-445b-9afb-73ec43a08009",
+					"name": "Id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c90fd76e-9853-4a51-9c8e-5b5031863d64",
+					"name": "Name",
+					"datatype": "varchar",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "1c1e51d4-1b61-43db-bc08-57f1f99ea164",
+					"name": "IsDeleted",
+					"datatype": "bit",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "0",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"fe29af2c-8d49-4745-b651-88c692d7debd",
+				"722924ae-e1d3-42ed-b0cd-a7d5c626467c"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "f3b4d9ef-d623-43ba-839d-8ce8e01ae455",
+					"name": "table1_pkey",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "74b5e7b4-de5c-4597-a42c-c10428d031c3",
+							"colid": "477d59aa-a06f-445b-9afb-73ec43a08009"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": ""
+			}
+		},
+		"be3bfeb1-739f-4eff-9643-3b513d52ed76": {
+			"id": "be3bfeb1-739f-4eff-9643-3b513d52ed76",
+			"visible": true,
+			"name": "Secret",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "7d879d8e-5f7c-45ae-b0a9-54e051f3bba8",
+					"name": "Id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "37941c39-6e15-4ab4-b9c1-6e9ce8722c0b",
+					"name": "Vault_id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "8fbeba32-a5e7-4501-b1ae-7d0123674bdd",
+					"name": "Name",
+					"datatype": "varchar",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "67fa4034-05db-4abb-8049-30fee035b017",
+					"name": "Created",
+					"datatype": "datetime",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "690b24ef-176f-445a-9b0c-cd2c25d226fe",
+					"name": "CreatedBy",
+					"datatype": "varchar",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"fe29af2c-8d49-4745-b651-88c692d7debd",
+				"506c311f-d008-4dbd-93c2-29f989bd9f0f",
+				"0287387a-e4f5-448c-9c25-002c6d9b9cc1"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "7de2ecfc-9b21-499a-b9ba-8af16dba639a",
+					"name": "table1_pkey1",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "0c924a43-73bc-49d9-9fa5-639f95aa3274",
+							"colid": "7d879d8e-5f7c-45ae-b0a9-54e051f3bba8"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": ""
+			}
+		},
+		"7c0fd21a-ba16-46ca-8015-dd5e2b1cc86e": {
+			"id": "7c0fd21a-ba16-46ca-8015-dd5e2b1cc86e",
+			"visible": true,
+			"name": "SecretValue",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "62797868-65f9-42c2-b899-3f5d4047cfc3",
+					"name": "Id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "a5e0ddab-9830-4d6d-9adc-dd8051ba8f04",
+					"name": "Secret_id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "b9a42b12-c75b-48f1-9512-2709dbdd6d4e",
+					"name": "ExpirationDate",
+					"datatype": "datetime",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5bed9ff9-af6e-47ec-8742-f9daae385b58",
+					"name": "ActivationDate",
+					"datatype": "datetime",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e404509b-7350-4bb8-8839-88d8c64d2f48",
+					"name": "IsEnabled",
+					"datatype": "bit",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "1",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "1cb36cbb-c532-454d-8e69-6eb644076e7b",
+					"name": "Value",
+					"datatype": "varbinary",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "128"
+				}
+			],
+			"relations": [
+				"506c311f-d008-4dbd-93c2-29f989bd9f0f",
+				"29e7b57f-7d15-481c-984b-5a91eeb4f400"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "7344fa7f-def7-4cc9-9a06-ce6e21bb7e1d",
+					"name": "table1_pkey2",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "ea644d0b-9a54-41a8-9310-17cc0eb63eda",
+							"colid": "62797868-65f9-42c2-b899-3f5d4047cfc3"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": ""
+			}
+		},
+		"f69259a7-96fe-4693-9658-f5585fad0df4": {
+			"id": "f69259a7-96fe-4693-9658-f5585fad0df4",
+			"visible": true,
+			"name": "SecretValueLog",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "5dfa2711-9e95-4dac-a5bd-f2c4f62e6b9f",
+					"name": "Id",
+					"datatype": "int",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ca808708-868c-45ee-bc1a-ec86faa9216e",
+					"name": "Created",
+					"datatype": "datetime",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "dffe92fa-24ae-4a90-b9f5-1ac3de613a39",
+					"name": "LastOperationTimestamp",
+					"datatype": "datetime",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7ceb2b12-1646-4d14-85ba-1b9136d41162",
+					"name": "CreatedBy",
+					"datatype": "varchar",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e8f7dc97-f65d-442a-921b-6a6987dd2522",
+					"name": "ModifiedBy",
+					"datatype": "varchar",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9e125f54-a363-4df7-baa8-06ef2944e574",
+					"name": "SecretValue_id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "13c2018e-46db-47dc-b2f8-e0a7d86a08ba",
+					"name": "Secret_id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"29e7b57f-7d15-481c-984b-5a91eeb4f400",
+				"0287387a-e4f5-448c-9c25-002c6d9b9cc1"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "af8ca30b-4d47-480a-88f9-4f5b1e5864e1",
+					"name": "table1_pkey3",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "73afccef-fece-4c4c-8bcb-2b651899ff2e",
+							"colid": "5dfa2711-9e95-4dac-a5bd-f2c4f62e6b9f"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": ""
+			}
+		},
+		"99a29bea-5ae8-46c4-b9b2-750d3e271ce9": {
+			"id": "99a29bea-5ae8-46c4-b9b2-750d3e271ce9",
+			"visible": true,
+			"name": "VaultPolicy",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "7d84c789-504a-4b5b-b379-0445e187f665",
+					"name": "Id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4dcec08e-3349-4f6c-9e2e-6ac16f8da96a",
+					"name": "Policy_id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "297291f6-6c8a-44da-ae66-e91a1164d687",
+					"name": "Vault_id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "5f2f6f4e-342d-4be4-87cb-dbccaf2b6ffc",
+					"name": "Object_Id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"531398b6-dcc0-4877-8673-9e8370b6b4a7",
+				"722924ae-e1d3-42ed-b0cd-a7d5c626467c"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "d411e09d-1a56-4579-83eb-87055049d684",
+					"name": "table1_pkey4",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "e55a00e6-d6bb-4e5e-98cf-9532cf635437",
+							"colid": "7d84c789-504a-4b5b-b379-0445e187f665"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": ""
+			}
+		},
+		"de0f6c12-2a5a-4591-8344-23b4345bd161": {
+			"id": "de0f6c12-2a5a-4591-8344-23b4345bd161",
+			"visible": true,
+			"name": "Policy",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "9688bb07-b29d-400b-a5bb-514eb339f85f",
+					"name": "Id",
+					"datatype": "uniqueidentifier",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "6ad4e1b1-9f9d-4706-bcc7-56e19ff5e37b",
+					"name": "Name",
+					"datatype": "varchar",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": null,
+					"mssql": {
+						"computed": ""
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"531398b6-dcc0-4877-8673-9e8370b6b4a7"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "2c13f193-4822-46e7-9ea2-e9f80e0f5afa",
+					"name": "table1_pkey5",
+					"isPk": true,
+					"mssql": {
+						"clustered": true
+					},
+					"cols": [
+						{
+							"id": "1e5c7505-b9db-4fbb-a5c5-e233dbc57cef",
+							"colid": "9688bb07-b29d-400b-a5bb-514eb339f85f"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"mssql": {
+				"schema": ""
+			}
+		}
+	},
+	"relations": {
+		"fe29af2c-8d49-4745-b651-88c692d7debd": {
+			"id": "fe29af2c-8d49-4745-b651-88c692d7debd",
+			"visible": true,
+			"name": "Secret_Vault_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "f3b4d9ef-d623-43ba-839d-8ce8e01ae455",
+			"parent": "08356400-1100-44f3-ab54-de80dcedd5c9",
+			"child": "be3bfeb1-739f-4eff-9643-3b513d52ed76",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "0a3953ac-6c95-4aee-8a4f-030785be959d",
+					"parentcol": "477d59aa-a06f-445b-9afb-73ec43a08009",
+					"childcol": "37941c39-6e15-4ab4-b9c1-6e9ce8722c0b"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"506c311f-d008-4dbd-93c2-29f989bd9f0f": {
+			"id": "506c311f-d008-4dbd-93c2-29f989bd9f0f",
+			"visible": true,
+			"name": "SecretValue_Secret_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "7de2ecfc-9b21-499a-b9ba-8af16dba639a",
+			"parent": "be3bfeb1-739f-4eff-9643-3b513d52ed76",
+			"child": "7c0fd21a-ba16-46ca-8015-dd5e2b1cc86e",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "c69eca7d-e0f6-4aec-b9f4-9c46397f752f",
+					"parentcol": "7d879d8e-5f7c-45ae-b0a9-54e051f3bba8",
+					"childcol": "a5e0ddab-9830-4d6d-9adc-dd8051ba8f04"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"29e7b57f-7d15-481c-984b-5a91eeb4f400": {
+			"id": "29e7b57f-7d15-481c-984b-5a91eeb4f400",
+			"visible": true,
+			"name": "SecretValueLog_SecretValue_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "7344fa7f-def7-4cc9-9a06-ce6e21bb7e1d",
+			"parent": "7c0fd21a-ba16-46ca-8015-dd5e2b1cc86e",
+			"child": "f69259a7-96fe-4693-9658-f5585fad0df4",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "c319b963-0944-49d6-ad26-28c822d29e99",
+					"parentcol": "62797868-65f9-42c2-b899-3f5d4047cfc3",
+					"childcol": "9e125f54-a363-4df7-baa8-06ef2944e574"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"531398b6-dcc0-4877-8673-9e8370b6b4a7": {
+			"id": "531398b6-dcc0-4877-8673-9e8370b6b4a7",
+			"visible": true,
+			"name": "VaultPolicy_Policy_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "2c13f193-4822-46e7-9ea2-e9f80e0f5afa",
+			"parent": "de0f6c12-2a5a-4591-8344-23b4345bd161",
+			"child": "99a29bea-5ae8-46c4-b9b2-750d3e271ce9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "8aad8970-f0fe-4128-8097-44ed8e509794",
+					"parentcol": "9688bb07-b29d-400b-a5bb-514eb339f85f",
+					"childcol": "4dcec08e-3349-4f6c-9e2e-6ac16f8da96a"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"722924ae-e1d3-42ed-b0cd-a7d5c626467c": {
+			"id": "722924ae-e1d3-42ed-b0cd-a7d5c626467c",
+			"visible": true,
+			"name": "VaultPolicy_Vault_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "f3b4d9ef-d623-43ba-839d-8ce8e01ae455",
+			"parent": "08356400-1100-44f3-ab54-de80dcedd5c9",
+			"child": "99a29bea-5ae8-46c4-b9b2-750d3e271ce9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "49067848-c810-41ee-9b47-9d9efb50dfaa",
+					"parentcol": "477d59aa-a06f-445b-9afb-73ec43a08009",
+					"childcol": "297291f6-6c8a-44da-ae66-e91a1164d687"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		},
+		"0287387a-e4f5-448c-9c25-002c6d9b9cc1": {
+			"id": "0287387a-e4f5-448c-9c25-002c6d9b9cc1",
+			"visible": true,
+			"name": "SecretValueLog_Secret_id_fkey",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "7de2ecfc-9b21-499a-b9ba-8af16dba639a",
+			"parent": "be3bfeb1-739f-4eff-9643-3b513d52ed76",
+			"child": "f69259a7-96fe-4693-9658-f5585fad0df4",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "d9baad20-6147-498c-948b-ce62b07ba694",
+					"parentcol": "7d879d8e-5f7c-45ae-b0a9-54e051f3bba8",
+					"childcol": "13c2018e-46db-47dc-b2f8-e0a7d86a08ba"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"relationColor": "transparent"
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "Secrets_Project_ER",
+		"id": "7d83ff49-70b8-414d-b9a3-3f2c8d4dc0d3",
+		"activeDiagram": "7772d062-6147-4678-98a2-c1e2ef8a99e9",
+		"desc": "",
+		"path": "",
+		"type": "MSSQL",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 8,
+			"minor": 5,
+			"extra": 1
+		},
+		"laststoredin": {
+			"major": 8,
+			"minor": 5,
+			"extra": 1
+		},
+		"writeFileParam": false,
+		"authorName": "",
+		"companyDetails": "",
+		"companyUrl": "",
+		"def_coltopk": true,
+		"mssql": {
+			"schema": ""
+		},
+		"sqlSettings": {
+			"wrapLines": true,
+			"wrapOffset": 80,
+			"indent": true,
+			"indentationString": "spaces",
+			"indentationSize": 2,
+			"limitItemsOnLine": true,
+			"maxListItemsOnLine": 3,
+			"statementDelimiter": "GO",
+			"routineDelimiter": ";",
+			"keywordCase": "upper",
+			"identiferCase": "original",
+			"includeSchema": "always",
+			"quotation": "if_needed",
+			"includeGeneratedNames": "always",
+			"quotationType": "square_brackets"
+		},
+		"nameAutoGeneration": {
+			"keys": true,
+			"indexes": true,
+			"relations": true
+		},
+		"connectionVersion": ""
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"7772d062-6147-4678-98a2-c1e2ef8a99e9": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "7772d062-6147-4678-98a2-c1e2ef8a99e9",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"08356400-1100-44f3-ab54-de80dcedd5c9": {
+					"referencedItemId": "08356400-1100-44f3-ab54-de80dcedd5c9",
+					"x": 303,
+					"y": 393,
+					"gHeight": 81,
+					"gWidth": 194,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"be3bfeb1-739f-4eff-9643-3b513d52ed76": {
+					"referencedItemId": "be3bfeb1-739f-4eff-9643-3b513d52ed76",
+					"x": 606,
+					"y": 316,
+					"gHeight": 117,
+					"gWidth": 228,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"7c0fd21a-ba16-46ca-8015-dd5e2b1cc86e": {
+					"referencedItemId": "7c0fd21a-ba16-46ca-8015-dd5e2b1cc86e",
+					"x": 944,
+					"y": 304,
+					"gHeight": 135,
+					"gWidth": 234,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"f69259a7-96fe-4693-9658-f5585fad0df4": {
+					"referencedItemId": "f69259a7-96fe-4693-9658-f5585fad0df4",
+					"x": 983,
+					"y": 615,
+					"gHeight": 153,
+					"gWidth": 290,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"99a29bea-5ae8-46c4-b9b2-750d3e271ce9": {
+					"referencedItemId": "99a29bea-5ae8-46c4-b9b2-750d3e271ce9",
+					"x": 250,
+					"y": 660,
+					"gHeight": 99,
+					"gWidth": 236,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				},
+				"de0f6c12-2a5a-4591-8344-23b4345bd161": {
+					"referencedItemId": "de0f6c12-2a5a-4591-8344-23b4345bd161",
+					"x": 683,
+					"y": 683,
+					"gHeight": 63,
+					"gWidth": 194,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd",
+			"showHorizontal": true,
+			"showDescriptions": true,
+			"showIndicators": true,
+			"showProgress": true,
+			"lineWidth": "2",
+			"boxSize": "0",
+			"boxSpacing": "2",
+			"boxAlign": "center",
+			"showIndicatorCaptions": true,
+			"showEstimatedSize": false,
+			"showSchemaContainer": true,
+			"showEmbeddedInParents": true,
+			"showCardinalityCaptions": true,
+			"showRelationshipNames": false,
+			"showLineCaptions": false,
+			"showColumns": true,
+			"showColumnDataTypes": true,
+			"showSampleData": false,
+			"showTableIndexes": true,
+			"showTableDescriptions": false,
+			"showRelations": true,
+			"backgroundImage": "na",
+			"descriptionsColor": "transparent",
+			"embeddedSpacing": "2",
+			"showMainIcon": true,
+			"showLabels": true,
+			"showCustomizations": false
+		}
+	},
+	"diagramsOrder": [],
+	"order": [
+		"08356400-1100-44f3-ab54-de80dcedd5c9",
+		"be3bfeb1-739f-4eff-9643-3b513d52ed76",
+		"7c0fd21a-ba16-46ca-8015-dd5e2b1cc86e",
+		"f69259a7-96fe-4693-9658-f5585fad0df4",
+		"99a29bea-5ae8-46c4-b9b2-750d3e271ce9",
+		"de0f6c12-2a5a-4591-8344-23b4345bd161",
+		"fe29af2c-8d49-4745-b651-88c692d7debd",
+		"506c311f-d008-4dbd-93c2-29f989bd9f0f",
+		"29e7b57f-7d15-481c-984b-5a91eeb4f400",
+		"531398b6-dcc0-4877-8673-9e8370b6b4a7",
+		"722924ae-e1d3-42ed-b0cd-a7d5c626467c",
+		"0287387a-e4f5-448c-9c25-002c6d9b9cc1"
+	],
+	"collapsedTreeItems": [],
+	"reverseStats": {}
+}
