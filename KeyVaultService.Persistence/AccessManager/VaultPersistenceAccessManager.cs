@@ -18,7 +18,6 @@ internal class VaultPersistenceAccessManager(IServiceScopeFactory serviceScopeFa
 
     /// <inheritdoc cref="IVaultPersistenceAccessManager.ExecuteWriter{TEntity}"/>
     public TEntity ExecuteWriter<TEntity>(Func<IUnitOfWorkWritable, TEntity> command)
-        where TEntity : class, IEntity
         => PerformScopedDbAction(command, true);
 
     /// <summary>

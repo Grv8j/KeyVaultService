@@ -9,7 +9,7 @@ public class ServiceResultWrapper<TResult> : IServiceResultWrapper<TResult>
 {
     /// <inheritdoc cref="IServiceResultWrapper{TResult}.Result"/>
     public TResult? Result { get; init; }
-
+    
     /// <inheritdoc cref="IServiceResultWrapper{TResult}.Errors"/>
     public ICollection<string> Errors { get; init; } = new List<string>();
 }

@@ -42,8 +42,15 @@ public static class DependencyManager
         
         foreach (var type in assembly.GetTypes()
                      .Where(x => 
-                         x.GetCustomAttributes(typeof(RegisterServiceAttribute)).Any()))
+                         x.GetCustomAttributes(typeof(RegisterServiceAttribute)).Any() || (typeof(IMapper).IsAssignableFrom(x) && x.IsClass)))
         {
+            //If type is of mapper type, register map also
+            if (typeof(IMapper).IsAssignableFrom(type))
+            {
+                var mapper = Activator.CreateInstance(type) as IMapper;
+                mapper?.Map();
+            }
+            
             var attribute = type.GetCustomAttribute<RegisterServiceAttribute>();
 
             if (attribute != null && (attribute.ServiceInterfaceType.IsAssignableFrom(type) || type.IsGenericTypeDefinition))

@@ -13,10 +13,10 @@
 
     <ItemGroup>
         <PackageReference Include="TinyMapper" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Mapping\" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+        <PackageReference Include="FluentValidation" />
+        <PackageReference Include="FluentValidation.AspNetCore" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
     </ItemGroup>
 
 </Project>

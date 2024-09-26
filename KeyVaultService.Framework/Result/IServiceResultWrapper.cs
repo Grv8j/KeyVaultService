@@ -10,7 +10,7 @@ public interface IServiceResultWrapper<out TResult>
     /// <inheritdoc cref="TResult"/>
     /// </summary>
     public TResult? Result { get; }
-
+    
     /// <summary>
     /// Collection of service errors
     /// </summary>

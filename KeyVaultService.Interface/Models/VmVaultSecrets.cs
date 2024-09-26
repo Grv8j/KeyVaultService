@@ -15,5 +15,5 @@ public class VmVaultSecrets : VmBase
     /// <summary>
     /// Collection of vault secrets
     /// </summary>
-    public ICollection<VmVaultSecrets> VaultSecrets { get; set; } = new List<VmVaultSecrets>();
+    public ICollection<VmSecret> VaultSecrets { get; set; } = new List<VmSecret>();
 }
