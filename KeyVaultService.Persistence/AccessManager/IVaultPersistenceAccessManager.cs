@@ -15,13 +15,12 @@ public interface IVaultPersistenceAccessManager
     /// <typeparam name="TEntity">Type of database entity</typeparam>
     /// <returns>Entity</returns>
     TEntity ExecuteReader<TEntity>(Func<IUnitOfWork, TEntity> query);
-    
+
     /// <summary>
     /// Executes write operation and returns saved entity
     /// </summary>
     /// <param name="command">Command delegate</param>
     /// <typeparam name="TEntity">Type of database entity</typeparam>
     /// <returns>Saved entity</returns>
-    TEntity ExecuteWriter<TEntity>(Func<IUnitOfWorkWritable, TEntity> command)
-        where TEntity : class, IEntity;
+    TEntity ExecuteWriter<TEntity>(Func<IUnitOfWorkWritable, TEntity> command);
 }

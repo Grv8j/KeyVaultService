@@ -1,7 +1,11 @@
 using System.Reflection;
 using Asp.Versioning;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using KeyVaultService;
+using KeyVaultService.Filters;
 using KeyVaultService.Framework.Managers;
+using KeyVaultService.Interface.Command;
 using KeyVaultService.Persistence;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -12,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt => opt.Filters.Add(typeof(ValidationFilter)));
 
 builder.Services.AddApiVersioning(opt =>
 {
@@ -42,6 +46,9 @@ builder.Services.RegisterServicesFromFullScope();
 builder.Services.RegisterPersistenceLayer(
     builder.Configuration
         .GetConnectionString(Constants.Configuration.CONNECTION_STRING_KEY_NAME));
+
+builder.Services.AddFluentValidationAutoValidation()
+    .AddFluentValidationClientsideAdapters();
 
 builder.Host.UseSerilog((host, conf) =>
     conf.ReadFrom.Configuration(host.Configuration));

@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using KeyVaultService.Framework.Dependency;
 using KeyVaultService.Persistence.Entities.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace KeyVaultService.Persistence.Repository;
 
@@ -47,6 +48,10 @@ internal class Repository<T> : IRepository<T>
     /// <inheritdoc cref="IRepository{T}.Get"/>
     public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
         => context.Set<T>().Where(predicate);
+
+    /// <inheritdoc cref="IRepository{T}.Exists"/>
+    public bool Exists(Expression<Func<T, bool>> predicate)
+        => context.Set<T>().Any(predicate);
 
     /// <inheritdoc cref="IRepository{T}.Dispose"/>
     public void Dispose() => context.Dispose();

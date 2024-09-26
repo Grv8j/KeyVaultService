@@ -1,6 +1,5 @@
 using KeyVaultService.Persistence.Entities.Interfaces;
 using KeyVaultService.Persistence.Repository;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace KeyVaultService.Persistence.UnitOfWork;
 
@@ -10,19 +9,15 @@ namespace KeyVaultService.Persistence.UnitOfWork;
 internal class UnitOfWork : IUnitOfWork
 {
     protected readonly KeyVaultDbContext dbContext;
-    private readonly IServiceProvider serviceProvider;
 
     /// <summary>
     /// C-tor
     /// </summary>
     /// <param name="dbContext">Db context</param>
-    /// <param name="serviceProvider">Service provider</param>
     protected UnitOfWork(
-        KeyVaultDbContext dbContext,
-        IServiceProvider serviceProvider)
+        KeyVaultDbContext dbContext)
     {
         this.dbContext = dbContext;
-        this.serviceProvider = serviceProvider;
     }
 
     /// <inheritdoc cref="IUnitOfWork.Dispose"/>
@@ -32,9 +27,6 @@ internal class UnitOfWork : IUnitOfWork
     public IRepository<TEntity> GetRepository<TEntity>()
         where TEntity : class, IEntity
     {
-        // return serviceProvider.GetService<IRepository<TEntity>>()
-        //        ?? throw new InvalidOperationException($"Repository is not registered for type {typeof(IRepository<TEntity>).FullName}");
-
         return new Repository<TEntity>(dbContext);
     }
 }

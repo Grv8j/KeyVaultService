@@ -45,4 +45,11 @@ public interface IRepository<T> : IDisposable
     /// </summary>
     /// <param name="predicate">Get predicate</param>
     IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
+    
+    /// <summary>
+    /// Checks if entities which satisfies specified predicate exists in the database
+    /// </summary>
+    /// <param name="predicate">Exists predicate</param>
+    /// <returns>True if exists, otherwise false</returns>
+    bool Exists(Expression<Func<T, bool>> predicate);
 }

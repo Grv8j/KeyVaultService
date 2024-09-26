@@ -1,4 +1,4 @@
-namespace KeyVaultService.Interface.Query;
+namespace KeyVaultService.Interface;
 
 /// <summary>
 /// View model base class

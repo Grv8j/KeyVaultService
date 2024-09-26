@@ -17,4 +17,15 @@ public static class ServiceResultWrapperProvider
         {
             Result = result
         };
+    
+    /// <summary>
+    /// Creates new instance of result wrapper with errors only
+    /// </summary>
+    /// <param name="errors">Collection of errors</param>
+    /// <returns>New instance of <inheritdoc cref="ServiceResultWrapper{TResult}"/> </returns>
+    public static IServiceResultWrapper<object> CreateErrorOnlyWrapper(ICollection<string> errors)
+        => new ServiceResultWrapper<object>
+        {
+            Errors = errors
+        };
 }
