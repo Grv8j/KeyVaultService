@@ -25,12 +25,12 @@ public class SecretValue : IEntity
     /// <summary>
     /// Expiration date
     /// </summary>
-    public DateOnly? ExpirationDate { get; set; }
+    public DateTime? ExpirationDate { get; set; }
 
     /// <summary>
     /// Activation date
     /// </summary>
-    public DateOnly? ActivationDate { get; set; }
+    public DateTime? ActivationDate { get; set; }
 
     /// <summary>
     /// Flag ig secret is enabled

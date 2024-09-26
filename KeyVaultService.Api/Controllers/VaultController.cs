@@ -14,10 +14,7 @@ public sealed class VaultController : BaseController
     /// <returns>True if available, otherwise false</returns>
     [HttpGet("CheckNameAvailability")]
     [ProducesResponseType(typeof(IServiceResultWrapper<bool>), StatusCodes.Status200OK)]
-    public IActionResult CheckNameAvailability()
-    {
-        return null;
-    }
-    
+    public IActionResult CheckNameAvailability() => throw new NotImplementedException();
+
     //TODO - GET, Create, List, Purge,...
 }
